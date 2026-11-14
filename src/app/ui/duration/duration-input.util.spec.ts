@@ -164,7 +164,7 @@ describe('processDurationInput', () => {
       ['2 hours', 2 * 60 * 60 * 1000],
       ['45 m', 45 * 60 * 1000],
       ['30 min', 30 * 60 * 1000],
-      ['1,5h 2,5m', 1.5 * 60 * 60 * 1000 + 2.5 * 60 * 1000],
+      ['1,5h 2,5m', 5_400_000 + 150_000], // 1.5 h + 2.5 min
     ];
     cases.forEach(([input, ms]) => {
       it(`should process "${input}"`, () => {
